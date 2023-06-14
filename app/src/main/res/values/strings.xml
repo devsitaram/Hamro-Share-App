@@ -6,4 +6,9 @@
     <string name="hamro_share">Hamro share</string>
     <string name="share">Share</string>
     <string name="hamro">Hamro</string>
+
+    <string name="tv_first_description">Share market is a platform where investors buy and sell shares of publicly traded companies.</string>
+    <string name="tv_second_description">To invest in the growth potential of businesses and potentially earn profits.</string>
+    <string name="tv_third_description">Share prices are determined by demand and supply, economic, performance, and investor sentiment.</string>
+
 </resources>
