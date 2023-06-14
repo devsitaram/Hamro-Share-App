@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65">
+        app:layout_constraintVertical_bias="0.575">
 
         <TextView
             android:id="@+id/tvAppFirstName"
@@ -81,7 +81,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
                 android:text="@string/depository_participants"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -173,12 +172,39 @@
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:backgroundTint="@color/redColor"
                 android:text="@string/login"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/forgot_your"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/passwords"
+                    android:textColor="@color/redColor"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -193,19 +219,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
-                    android:text="@string/forgot_your"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:text="@string/not_a_member"
+                    android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/tvForgotPassword"
+                    android:id="@+id/tvRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/passwords"
-                    android:textColor="@color/redColor"
+                    android:text="@string/register_now"
+                    android:textColor="@color/blueColor"
                     android:textStyle="bold"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

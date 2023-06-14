@@ -34,6 +34,11 @@
     <string name="textview">textView</string>
     <string name="select_bank">Select Bank</string>
     <string name="nepal_bank_limited">Nepal Bank limited</string>
+    <string name="register_details">Register Details</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register_now">Register now</string>
+    <string name="not_a_member">Not a member?</string>
 
     // dropdown bank names
     <string-array name="bank_name">

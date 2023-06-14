@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import com.sitaram.hamroshare.MainActivity
 import com.sitaram.hamroshare.R
-import com.sitaram.hamroshare.features.EmptyActivity
+import com.sitaram.hamroshare.features.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
 
@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     private var loginPresenter: LoginPresenter? = null
     // private var databaseHelper: DatabaseHelper? = null
     private var tvRegister: TextView? = null
-    private var autoCompleteTextView: AutoCompleteTextView? = null
+    private var autoCompleteTVBank: AutoCompleteTextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +26,14 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         // databaseHelper = DatabaseHelper(this)
 
         // dropdown text fields
-        autoCompleteTextView = findViewById(R.id.autoCompleteTextView)
+        autoCompleteTVBank = findViewById(R.id.autoCompleteTextView)
         val banks = resources.getStringArray(R.array.bank_name)
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, banks)
-        autoCompleteTextView?.setAdapter(arrayAdapter)
+        autoCompleteTVBank?.setAdapter(arrayAdapter)
 
         // initialize the variable
         loginButton = findViewById(R.id.btnLogin)
-        // editTextBank = findViewById(R.id.inputTextBankName)
+        tvRegister = findViewById(R.id.tvRegister)
         editTextName = findViewById(R.id.inputTextUsername)
         editTextPassword = findViewById(R.id.inputTextPassword)
 
@@ -69,14 +69,14 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     // navigate function
     override fun navigateToHome() {
         // explicit intent use to navigate home activity
-        val intent = Intent(this, EmptyActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 
     // navigate function
     private fun navigateToRegister() {
         // explicit intent use to navigate register activity
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
 }
