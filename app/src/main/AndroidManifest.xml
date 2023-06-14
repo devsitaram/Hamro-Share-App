@@ -12,6 +12,9 @@
         android:theme="@style/Theme.HamroShare"
         tools:targetApi="31">
         <activity
+            android:name=".features.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.splash.SliderActivity"
             android:exported="false" />
         <activity

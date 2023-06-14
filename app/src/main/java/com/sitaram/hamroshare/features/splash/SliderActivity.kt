@@ -12,6 +12,7 @@ import androidx.core.view.get
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.sitaram.hamroshare.R
+import com.sitaram.hamroshare.features.login.LoginActivity
 
 class SliderActivity : AppCompatActivity() {
     private var mSliderViewPager: ViewPager? = null
@@ -38,12 +39,14 @@ class SliderActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("SelfPrefs", MODE_PRIVATE)
         val hasViewedSlider = sharedPreferences.getBoolean("has_viewed_slider", false)
         if (hasViewedSlider) {
-            startActivity(Intent(this, LoginActivity::class.java))
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
             finish()
         } else {
             // skip button
             btnSkip?.setOnClickListener {
-                startActivity(Intent(this, LoginActivity::class.java))
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
                 finish()
             }
 
@@ -59,7 +62,8 @@ class SliderActivity : AppCompatActivity() {
                 if (getItem(0) < 2) {
                     mSliderViewPager!!.setCurrentItem(getItem(1), true)
                 } else {
-                    startActivity(Intent(this@SliderActivity, LoginActivity::class.java))
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
                     finish()
                 }
             })
@@ -89,21 +93,18 @@ class SliderActivity : AppCompatActivity() {
             dots[i] = TextView(this)
             dots[i]!!.text = "\u2022"
             dots[i]!!.textSize = 35f
-            dots[i]!!
-                .setTextColor(resources.getColor(R.color.inactive, applicationContext.theme))
+            dots[i]!!.setTextColor(resources.getColor(R.color.inactive, applicationContext.theme))
             mDotLayout!!.addView(dots[i])
         }
         // setTextColor for slider position
-        dots[position]!!
-            .setTextColor(resources.getColor(R.color.active, applicationContext.theme))
+        dots[position]!!.setTextColor(resources.getColor(R.color.active, applicationContext.theme))
     }
 
     private var viewListener: OnPageChangeListener = object : OnPageChangeListener {
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
-            positionOffsetPixels: Int
-        ) {
+            positionOffsetPixels: Int) {
             // the user is scrolling through the ViewPager
         }
 

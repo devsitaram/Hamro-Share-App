@@ -14,18 +14,21 @@ class SliderAdapter(context: Context) : PagerAdapter() {
 
     private var context: Context? = context
 
+    // image for intArrayOf
     private val image = intArrayOf(
         R.mipmap.img_first_slider,
         R.mipmap.img_second_slider,
         R.mipmap.img_thirs_slider
     )
 
+    // description for intArrayOf
     private val description = intArrayOf(
         R.string.tv_first_description,
         R.string.tv_second_description,
         R.string.tv_third_description
     )
 
+    // count the number of images
     override fun getCount(): Int {
         return image.size
     }
