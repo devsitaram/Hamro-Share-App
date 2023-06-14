@@ -6,7 +6,6 @@
     <string name="hamro_share">Hamro share</string>
     <string name="hamro">HAMR</string>
     <string name="share">SHARE</string>
-
     <string name="tv_first_description">Share market is a platform where investors buy and sell shares of publicly traded companies.</string>
     <string name="tv_second_description">To invest in the growth potential of businesses and potentially earn profits.</string>
     <string name="tv_third_description">Share prices are determined by demand and supply, economic, performance, and investor sentiment.</string>
@@ -27,7 +26,7 @@
     <string name="remember_login_id">Remember Login ID</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="forgot_your">Forgot your</string>
-    <string name="passwords">Password?</string>
+    <string name="passwords">password?</string>
     <string name="_2023_cds_and_hamro_share_ltd">2023 CDS and Hamro Share Ltd.</string>
     <string name="nepal_stock_market">Nepal Stock Market</string>
     <string name="agricultural_bank_limited">Agricultural Bank Limited</string>

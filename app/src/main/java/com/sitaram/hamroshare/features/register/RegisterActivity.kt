@@ -18,7 +18,6 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     private var editTextEmail: EditText? = null
     private var editTextUsername: EditText? = null
     private var editTextUserPassword: EditText? = null
-    private var btnSignUp: Button? = null
     private var registerPresenter: RegisterPresenter? = null
 //    private var databaseHelper: DatabaseHelper? = null
 
@@ -33,8 +32,13 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextUsername = findViewById(R.id.editTextUsername)
         editTextUserPassword = findViewById(R.id.editTextUserPassword)
-        btnSignUp = findViewById(R.id.btnSignUp)
+        val btnSignUp = findViewById<Button>(R.id.btnSignUp)
+        val btnBack = findViewById<Button>(R.id.btnBack)
 
+        // back button setOnClickListener
+        btnBack.setOnClickListener {
+            navigateTOLogin()
+        }
         // register button setOnClickListener
         btnSignUp?.setOnClickListener {
             registerDetails()
