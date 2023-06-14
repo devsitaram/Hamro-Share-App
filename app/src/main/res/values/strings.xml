@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Hamro Share</string>
+    <string name="skip">Skip</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="hamro_share">Hamro share</string>
+    <string name="share">Share</string>
+    <string name="hamro">Hamro</string>
 </resources>
