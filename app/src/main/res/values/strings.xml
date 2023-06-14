@@ -4,8 +4,8 @@
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="hamro_share">Hamro share</string>
-    <string name="share">Share</string>
-    <string name="hamro">Hamro</string>
+    <string name="hamro">HAMR</string>
+    <string name="share">SHARE</string>
 
     <string name="tv_first_description">Share market is a platform where investors buy and sell shares of publicly traded companies.</string>
     <string name="tv_second_description">To invest in the growth potential of businesses and potentially earn profits.</string>
@@ -26,5 +26,7 @@
     <string name="bank_name">Bank Name</string>
     <string name="remember_login_id">Remember Login ID</string>
     <string name="forgot_your_password">Forgot your password?</string>
+    <string name="forgot_your">Forgot your</string>
+    <string name="passwords">Password?</string>
 
 </resources>

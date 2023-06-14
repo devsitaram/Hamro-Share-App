@@ -73,7 +73,7 @@ class SliderActivity : AppCompatActivity() {
             mDotLayout = findViewById(R.id.indicator_layout)
             // create an object of sliderAdapter and call the setAdapter methods
             sliderAdapter = SliderAdapter(this)
-            mSliderViewPager?.setAdapter(sliderAdapter)
+            mSliderViewPager?.adapter = sliderAdapter
             setUpIndicator(0) // call this method where it is accept the one integer parameter
             mSliderViewPager?.addOnPageChangeListener(viewListener)
 
