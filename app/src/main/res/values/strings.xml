@@ -30,5 +30,30 @@
     <string name="passwords">Password?</string>
     <string name="_2023_cds_and_hamro_share_ltd">2023 CDS and Hamro Share Ltd.</string>
     <string name="nepal_stock_market">Nepal Stock Market</string>
+    <string name="agricultural_bank_limited">Agricultural Bank Limited</string>
+    <string name="textview">textView</string>
+    <string name="select_bank">Select Bank</string>
+    <string name="nepal_bank_limited">Nepal Bank limited</string>
 
+    // dropdown bank names
+    <string-array name="bank_name">
+        <item>Agricultural Development Bank Ltd</item>
+        <item>Citizens Bank Limited</item>
+        <item>Everest Bank Limited</item>
+        <item>Global IME Bank Limited</item>
+        <item>Jyoti Bikash Bank Limited</item>
+        <item>Kamana Sewa Biksah Bank Limited</item>
+        <item>Krishi Biskash Bank Limited</item>
+        <item>Kumari Bank Limited</item>
+        <item>Laxmi Bank Limited</item>
+        <item>Machhapuchchhre Bank Limited</item>
+        <item>Mahalaxmi Bank Limited</item>
+        <item>Nabil Bank Limited</item>
+        <item>Nepal Bank Limited</item>
+        <item>Nepal SBI Bank Limited</item>
+        <item>NIC Asia Limited</item>
+        <item>Prabhu Bank Limited</item>
+        <item>Prime Commercial SBI Bank Ltd</item>
+        <item>Sanima Bank Limited</item>
+    </string-array>
 </resources>
