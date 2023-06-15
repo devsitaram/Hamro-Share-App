@@ -11,5 +11,5 @@ interface ApiServices {
         *["X-RapidAPI-Key: 71bf5ec090msha9ecf2d7b476478p1f2533jsnd5cef4e5ef55",
             "X-RapidAPI-Host: book4.p.rapidapi.com"])
     @GET("price/")
-    fun getBooks(): Call?
+    fun getPrice(): Call?
 }

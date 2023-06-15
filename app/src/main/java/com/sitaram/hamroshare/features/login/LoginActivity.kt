@@ -83,7 +83,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     // database call
     override fun login(username: String, password: String): Boolean? {
-        return databaseHelper?.fetchUsers(username, password)
+        return databaseHelper?.getUsers(username, password)
     }
 
 }

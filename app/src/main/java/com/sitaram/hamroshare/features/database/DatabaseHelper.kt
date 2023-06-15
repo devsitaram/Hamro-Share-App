@@ -59,7 +59,7 @@ class DatabaseHelper : SQLiteOpenHelper {
 
     // get data from database
     @SuppressLint("Recycle")
-    fun fetchUsers(name: String, password: String): Boolean {
+    fun getUsers(name: String, password: String): Boolean {
 
         // create the object of sqLiteDatabase and call the getReadableDatabase methods
         val sqLiteDatabase = this.readableDatabase
