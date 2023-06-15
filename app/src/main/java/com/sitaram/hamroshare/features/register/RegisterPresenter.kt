@@ -23,7 +23,7 @@ class RegisterPresenter: RegisterContract.Presenter {
         }
     }
 
-    //
+    // register user details
     private fun register(email: String, username: String, password: String){
         // val isRegisterSuccess: Boolean? = registerModel?.setRegister(email, username, password)
 

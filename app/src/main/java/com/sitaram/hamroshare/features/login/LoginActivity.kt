@@ -8,6 +8,7 @@ import com.sitaram.hamroshare.MainActivity
 import com.sitaram.hamroshare.R
 import com.sitaram.hamroshare.features.database.DatabaseHelper
 import com.sitaram.hamroshare.features.register.RegisterActivity
+import com.sitaram.hamroshare.features.stock.StockActivity
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
 
@@ -70,7 +71,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     // navigate function
     override fun navigateToHome() {
         // explicit intent use to navigate home activity
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, StockActivity::class.java)
         startActivity(intent)
     }
 

@@ -1,22 +1,25 @@
 package com.sitaram.hamroshare.features.stock
 
+import com.sitaram.hamroshare.features.stock.helper.StockPojo
+import retrofit2.Call
+
 interface StockContract {
 
     // create the interface view class
     interface View {
         fun aipSuccessMessage(success: String)
         fun aipErrorMessage(error: String)
-        fun setStock(body: StockPojo)
+        fun setStock(body: StockPojo?)
     }
 
     // interface Presenter
     interface Presenter {
-        fun getStock()
+        fun setStock()
 
     }
 
     // interface Model
     interface Model {
-        fun setStock()
+        fun getStock(): Call<StockPojo>?
     }
 }
