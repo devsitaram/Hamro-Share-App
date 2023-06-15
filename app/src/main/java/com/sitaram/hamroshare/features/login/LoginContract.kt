@@ -6,6 +6,7 @@ interface LoginContract {
     interface View {
         fun successMessage(message: String?)
         fun errorMessage(message: String?)
+        fun login(username: String, password: String): Boolean?
         fun navigateToHome()
     }
 

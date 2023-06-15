@@ -22,7 +22,10 @@ class LoginPresenter : LoginContract.Presenter {
     }
 
     private fun loginDetail(username: String, password: String) {
-        val isLoginSuccess: Boolean? = loginModel?.getUserDetails(username, password)
+//        val isLoginSuccess: Boolean? = loginModel?.getUserDetails(username, password)
+
+        val isLoginSuccess = view?.login(username, password)
+
         // check the login is success or not
         if (isLoginSuccess == true) {
             view?.navigateToHome()

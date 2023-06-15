@@ -1,4 +1,6 @@
-package com.sitaram.sqlitedatabasekotlin.features.register
+package com.sitaram.hamroshare.features.register
+
+import com.sitaram.hamroshare.features.register.RegisterContract
 
 class RegisterModel: RegisterContract.Model {
 

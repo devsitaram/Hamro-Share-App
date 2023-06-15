@@ -1,10 +1,11 @@
-package com.sitaram.sqlitedatabasekotlin.features.register
+package com.sitaram.hamroshare.features.register
 
 interface RegisterContract {
     // create the interface view class
         interface View {
             fun registerSuccessMessage(message: String)
             fun registerErrorMessage(message: String)
+            fun register(email: String, username: String, password: String): Boolean?
             fun navigateTOLogin()
         }
 

@@ -8,9 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.sitaram.hamroshare.R
+import com.sitaram.hamroshare.features.database.DatabaseHelper
 import com.sitaram.hamroshare.features.login.LoginActivity
-import com.sitaram.sqlitedatabasekotlin.features.register.RegisterContract
-import com.sitaram.sqlitedatabasekotlin.features.register.RegisterPresenter
 
 class RegisterActivity : AppCompatActivity(), RegisterContract.View {
 
@@ -19,14 +18,14 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     private var editTextUsername: EditText? = null
     private var editTextUserPassword: EditText? = null
     private var registerPresenter: RegisterPresenter? = null
-//    private var databaseHelper: DatabaseHelper? = null
+    private var databaseHelper: DatabaseHelper? = null
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         registerPresenter = RegisterPresenter(this, this)
-//        databaseHelper = DatabaseHelper(this)
+        databaseHelper = DatabaseHelper(this)
 
         // initialize the variable
         editTextEmail = findViewById(R.id.editTextEmail)
@@ -39,6 +38,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
         btnBack.setOnClickListener {
             navigateTOLogin()
         }
+
         // register button setOnClickListener
         btnSignUp?.setOnClickListener {
             registerDetails()
@@ -69,5 +69,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
         startActivity(intent)
     }
 
-
+    override fun register(email: String, username: String, password: String): Boolean? {
+        return databaseHelper?.registerUser(email, username, password)
+    }
 }

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.sql.SQLException
 
+@Suppress("UNREACHABLE_CODE")
 class DatabaseHelper : SQLiteOpenHelper {
 
     // create the companion object
@@ -17,6 +18,7 @@ class DatabaseHelper : SQLiteOpenHelper {
         private const val DATABASE_VIRION = 1
         private const val TABLE_NAME = "user"
         private const val KEY_ID = "id"
+        const val KEY_EMAIL = "email"
         const val KEY_NAME = "username"
         const val KEY_PASSWORD = "password"
     }
@@ -29,7 +31,7 @@ class DatabaseHelper : SQLiteOpenHelper {
         // create the database table
         db.execSQL(
             " CREATE TABLE " + TABLE_NAME +
-                    "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT, " + KEY_PASSWORD + " TEXT " + ")"
+                    "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_EMAIL + " TEXT, " + KEY_NAME + " TEXT, " + KEY_PASSWORD + " TEXT " + ")"
         )
     }
 
@@ -41,57 +43,41 @@ class DatabaseHelper : SQLiteOpenHelper {
     }
 
     // insert the user
-    fun registerUser(username: String?, userPassword: String?) {
-        // SQLiteDatabase databaseRead = this.getReadableDatabase(); // read only select query
-        val databaseWrite = this.writableDatabase // write only Insert, update, delete query
-        val values = ContentValues()
-        values.put(KEY_NAME, username)
-        values.put(KEY_PASSWORD, userPassword)
-        databaseWrite.insert(TABLE_NAME, null, values) // insert the user data in database
+    fun registerUser(email: String, username: String, userPassword: String): Boolean {
+        return try {
+            val databaseWrite = this.writableDatabase // write only Insert, update, delete query
+            val values = ContentValues()
+            values.put(KEY_EMAIL, email)
+            values.put(KEY_NAME, username)
+            values.put(KEY_PASSWORD, userPassword)
+            databaseWrite.insert(TABLE_NAME, null, values) // insert the user data in database
+            true
+        } catch (ex: SQLException) {
+            false
+        }
     }
 
     // get data from database
-    fun fetchUsers(name: String, password: String): Boolean? {
-        val isBoolean: Boolean? = null
-        try {
-            // create the object of sqLiteDatabase and call the getReadableDatabase methods
-            val sqLiteDatabase = this.readableDatabase
+    @SuppressLint("Recycle")
+    fun fetchUsers(name: String, password: String): Boolean {
 
-            @SuppressLint("Recycle")
-            val cursor = sqLiteDatabase.rawQuery("SELECT * FROM $TABLE_NAME", null)
-            // val arrayList = ArrayList<UserEntity>()
-            // use the while loop
-            while (cursor.moveToNext()) {
+        // create the object of sqLiteDatabase and call the getReadableDatabase methods
+        val sqLiteDatabase = this.readableDatabase
+        val cursor = sqLiteDatabase.rawQuery("SELECT * FROM $TABLE_NAME", null)
+        // use the while loop
+        while (cursor.moveToNext()) {
 
-                // store the data in variable
-                val userName = cursor.getString(1)
-                val userPassword = cursor.getString(2)
+            // store the data in variable
+            val userName = cursor.getString(2) // username
+            val userPassword = cursor.getString(3) // password
 
-                // print
-                Log.e("Name: ", userName)
-                Log.e("Password: ", userPassword)
-                Log.d("*********", "-------------")
-
-                return if (name == userName && password == userPassword) {
-                    isBoolean == true
-                } else {
-                    return isBoolean == false
-                }
-
-//            val userEntity = UserEntity()
-//            userEntity.id = cursor.getInt(0)
-//            userEntity.username = cursor.getString(1)
-//            userEntity.userPassword = cursor.getString(2)
-//            arrayList.add(userEntity) // add the users details
-
+            // check the user login details are valid or not
+            if (name == userName && password == userPassword) {
+                cursor.close()
+                return true
             }
-            Log.e("Boolean: ", isBoolean.toString())
-            return isBoolean
-        } catch (ex: SQLException) {
-            // handle ClassNotFoundException
-            ex.printStackTrace();
-            return false;
         }
-//        return arrayList
+        cursor.close()
+        return false
     }
 }

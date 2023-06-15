@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import com.sitaram.hamroshare.MainActivity
 import com.sitaram.hamroshare.R
+import com.sitaram.hamroshare.features.database.DatabaseHelper
 import com.sitaram.hamroshare.features.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
@@ -14,7 +15,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     private var editTextName: EditText? = null
     private var editTextPassword: EditText? = null
     private var loginPresenter: LoginPresenter? = null
-    // private var databaseHelper: DatabaseHelper? = null
+     private var databaseHelper: DatabaseHelper? = null
     private var tvRegister: TextView? = null
     private var autoCompleteTVBank: AutoCompleteTextView? = null
 
@@ -23,7 +24,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         setContentView(R.layout.activity_login)
 
         loginPresenter = LoginPresenter(this, this)
-        // databaseHelper = DatabaseHelper(this)
+         databaseHelper = DatabaseHelper(this)
 
         // dropdown text fields
         autoCompleteTVBank = findViewById(R.id.autoCompleteTextView)
@@ -79,4 +80,10 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
+
+    // database call
+    override fun login(username: String, password: String): Boolean? {
+        return databaseHelper?.fetchUsers(username, password)
+    }
+
 }

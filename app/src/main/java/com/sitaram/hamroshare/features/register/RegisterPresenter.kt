@@ -1,4 +1,4 @@
-package com.sitaram.sqlitedatabasekotlin.features.register
+package com.sitaram.hamroshare.features.register
 
 import android.content.Context
 
@@ -25,8 +25,10 @@ class RegisterPresenter: RegisterContract.Presenter {
 
     //
     private fun register(email: String, username: String, password: String){
-        val isSuccess: Boolean? = registerModel?.setRegister(email, username, password)
-        if (isSuccess == true) {
+        // val isRegisterSuccess: Boolean? = registerModel?.setRegister(email, username, password)
+
+        val isRegisterSuccess = view?.register(email, username, password)
+        if (isRegisterSuccess == true) {
             view?.registerSuccessMessage("Register successfully.")
             view?.navigateTOLogin()
         } else {
